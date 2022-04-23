@@ -1,0 +1,72 @@
+<div class="first" fxLayoutAlign="center center" style="width:100vw;height:100vh">
+    <mat-card class="second" fxFlex="22">
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <img class="logo" src="assets/component.png">
+            <p><strong>Online Book Shopping</strong></p>
+        </div>
+    </mat-card>
+    <mat-card class="pages" fxFlex="26">
+        <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+            <mat-tab label="LOGIN"><br>
+                <form [formGroup]="loginForm">
+                <mat-label>Email Id</mat-label>
+                <mat-form-field class="em1" appearance="outline">
+                    <input type="text" matInput formControlName="EmailId">
+                    <mat-error>Enter Email or Phone</mat-error>
+                </mat-form-field>
+                <mat-label>Password</mat-label>
+                <mat-form-field class="pw1" appearance="outline">
+                    <input matInput [type]="showPassword ? 'text' : 'password'"  formControlName="Password">
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                        {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                    <mat-error>Enter correct Password</mat-error>
+                </mat-form-field>
+                <div class="btn" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="25px"> 
+                    <div>
+                        <button mat-raised-button (click)="login()" routerLink="" class="btnlog">Login</button>
+                    </div>
+                </div>
+                <div class="li">            
+                    <a class="ref" routerLink="/forgotpassword">Forgot Password?</a>
+                </div><br>
+                <div class="or"><strong>OR</strong></div><br>
+                <div class="btn" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="25px"> 
+                    <div>
+                        <button mat-button class="btnface">Facebook</button>
+                    </div>
+                    <div>
+                        <button mat-button class="btngoog">Google</button>
+                    </div>                               
+                </div>
+            </form>
+            </mat-tab>
+            <mat-tab label="SIGNUP">
+                <mat-label>Full Name</mat-label>
+                <mat-form-field class="full" appearance="outline">
+                    <input type="text" matInput>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+                <mat-label>Email Id</mat-label>
+                <mat-form-field class="em1" appearance="outline">
+                    <input type="text" matInput>
+                    <mat-error>Enter Email</mat-error>
+                </mat-form-field>
+                <mat-label>Password</mat-label>
+                <mat-form-field class="pw1" appearance="outline">
+                    <input type="text" matInput>
+                    <mat-error>Enter Password</mat-error>
+                </mat-form-field>
+                <mat-label>Mobile Number</mat-label>
+                <mat-form-field class="mob" appearance="outline">
+                    <input type="text" matInput>
+                    <mat-error>Enter Mobile Number</mat-error>
+                </mat-form-field>
+                <div class="btn" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="25px"> 
+                    <div>
+                        <button mat-raised-button class="btnSign">Signup</button>
+                    </div>                              
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>
